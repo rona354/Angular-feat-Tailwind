@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-v10-with-tailwandcss';
+
+  compUI: string = 'centered-with-bottom-border';
+
+  constructor() { }
+
+  changeComponents(event) {
+
+    this.compUI = event;
+  }
 }
