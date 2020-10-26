@@ -10,6 +10,7 @@ import { FloatingKeyBtnComponent } from './floating-key-btn/floating-key-btn.com
 import { CenteredWithBottomBorderComponent } from './headers/centered-with-bottom-border/centered-with-bottom-border.component';
 import { SelectMenuComponent } from './elements/select-menu/select-menu.component';
 import { TealBackNavComponent } from './headers//teal-back-nav/teal-back-nav.component';
+import { DarkNavFeatWhiteHeaderComponent } from './app-shells/dark-nav-feat-white-header/dark-nav-feat-white-header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TealBackNavComponent } from './headers//teal-back-nav/teal-back-nav.com
     FloatingKeyBtnComponent,
     CenteredWithBottomBorderComponent,
     SelectMenuComponent,
-    TealBackNavComponent
+    TealBackNavComponent,
+    DarkNavFeatWhiteHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,6 @@ import { TealBackNavComponent } from './headers//teal-back-nav/teal-back-nav.com
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [CoratCoretComponent, BlueButtonComponent, FloatingKeyBtnComponent, CenteredWithBottomBorderComponent, SelectMenuComponent, TealBackNavComponent]
+  exports: [CoratCoretComponent, BlueButtonComponent, FloatingKeyBtnComponent, CenteredWithBottomBorderComponent, SelectMenuComponent, TealBackNavComponent, DarkNavFeatWhiteHeaderComponent]
 })
 export class AppModule { }

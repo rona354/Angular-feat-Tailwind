@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-select-menu',
@@ -9,6 +9,10 @@ import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from
 export class SelectMenuComponent implements OnInit {
 
   isOpen: boolean = false;
+
+  @Input() title: string;
+  @Input() activatedItem: string;
+  @Input() listItems: string[];
 
   @Output() clickedMenu = new EventEmitter<any>();               // <-- 🔘 event output
 

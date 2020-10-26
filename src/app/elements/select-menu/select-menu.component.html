@@ -5,9 +5,9 @@
       class="w-full"
       (click)="isOpen = !isOpen"
     >
-      <div class="m-2 bg-white p-1 flex border border-gray-200 rounded">
+      <div class="mx-2 my-1 bg-white p-1 flex border border-teal-600 rounded">
         <div class="flex flex-auto flex-wrap"></div>
-        <span class="cursor-pointer p-1 px-2 appearance-none outline-none w-full text-gray-800">headers</span>
+        <span class="cursor-pointer p-1 px-2 appearance-none outline-none w-full text-gray-800">{{title}}</span>
         <div class="text-gray-300 w-8 py-1 pl-2 pr-1 border-l flex items-center border-gray-200">
           <button class="cursor-pointer w-6 h-6 text-gray-600 outline-none focus:outline-none">
             <svg
@@ -37,27 +37,16 @@
       <div class="flex flex-col w-full">
 
         <div
-          (click)="clickedMenu.emit('centered-with-bottom-border')"
+          *ngFor="let item of listItems"
+          (click)="clickedMenu.emit(item)"
           class="cursor-pointer w-full border-gray-100 border-b hover:bg-teal-100"
         >
           <div
-            class="flex w-full items-center p-2 pl-2 border-transparent bg-white border-l-2 relative hover:bg-teal-600 hover:text-teal-100 border-teal-600"
+            [ngClass]="activatedItem === item ? 'border-teal-600' : ''"
+            class="flex w-full items-center p-2 pl-2 border-transparent bg-white border-l-2 relative hover:bg-teal-600 hover:text-teal-100"
           >
             <div class="w-full items-center flex">
-              <div class="mx-2 leading-6">centered-with-bottom-border</div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          (click)="clickedMenu.emit('teal-header-background')"
-          class="cursor-pointer w-full border-gray-100 rounded-b hover:bg-teal-100"
-        >
-          <div
-            class="flex w-full items-center p-2 pl-2 border-transparent bg-white border-l-2 relative  hover:bg-teal-600 hover:text-teal-100"
-          >
-            <div class="w-full items-center flex">
-              <div class="mx-2 leading-6">teal-header-background</div>
+              <div class="mx-2 leading-6">{{item}}</div>
             </div>
           </div>
         </div>
