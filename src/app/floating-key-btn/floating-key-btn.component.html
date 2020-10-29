@@ -4,17 +4,17 @@
 -->
 <div class="group fixed inline-block text-left bottom-0 right-0 mr-8 mb-8">
   <div>
-    <span class="rounded-md shadow-sm">
+    <span class="rounded-xl shadow-sm">
       <button
         type="button"
-        class="inline-flex justify-center w-full rounded-md border border-gray-300 p-4 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150"
+        class="inline-flex justify-center w-full rounded-md border border-gray-500 p-3 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150"
         id="options-menu"
         aria-haspopup="true"
         aria-expanded="true"
       >
         <!-- Heroicon name: cog -->
         <svg
-          class="h-5 w-5"
+          class="h-6 w-6"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -62,14 +62,9 @@
           [title]="item.title"
           (clickedMenu)="selectSubMenu($event)"
         ></app-select-menu>
-        <!-- <a
-          href=""
-          class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-          role="menuitem"
-        >Headings/Navigation Bar</a> -->
-        <form
+        <!-- <form
           method="POST"
-          action="#"
+          action=""
         >
           <button
             type="submit"
@@ -78,7 +73,7 @@
           >
             Sign out
           </button>
-        </form>
+        </form> -->
       </div>
     </div>
   </div>

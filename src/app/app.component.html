@@ -1,13 +1,23 @@
-<div
-  class="min-h-screen"
-  [ngSwitch]="compUI"
->
-  <app-centered-with-bottom-border *ngSwitchCase="'centered-with-bottom-border'"></app-centered-with-bottom-border>
-  <app-teal-back-nav *ngSwitchCase="'teal-header-background'"></app-teal-back-nav>
-  <app-dark-nav-feat-white-header *ngSwitchCase="'dark-nav-feat-white-header'"></app-dark-nav-feat-white-header>
-  <div *ngSwitchDefault>no header / navigation</div>
-  <!-- <app-hero-section></app-hero-section> -->
-  <!-- <app-corat-coret></app-corat-coret> -->
+<div class="min-h-screen">
+
+  <div [ngSwitch]="headerOrNav">
+    <app-centered-with-bottom-border *ngSwitchCase="'centered-with-bottom-border'"></app-centered-with-bottom-border>
+    <app-teal-back-nav *ngSwitchCase="'teal-header-background'"></app-teal-back-nav>
+    <app-dark-nav-feat-white-header *ngSwitchCase="'dark-nav-feat-white-header'"></app-dark-nav-feat-white-header>
+    <div *ngSwitchDefault>no header / navigation</div>
+  </div>
+
+  <div [ngSwitch]="elements">
+    <app-header-banner *ngSwitchCase="'header-banner'"></app-header-banner>
+  </div>
+
+  <div [ngSwitch]="container">
+    <app-hero-section *ngSwitchCase="'hero-section'"></app-hero-section>
+    <app-feature-sections *ngSwitchCase="'feature-sections'"></app-feature-sections>
+    <app-cta-sections *ngSwitchCase="'cta-sections'"></app-cta-sections>
+    <app-corat-coret *ngSwitchCase="'corat-coret'"></app-corat-coret>
+  </div>
+
 </div>
 
 

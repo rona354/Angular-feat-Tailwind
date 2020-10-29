@@ -8,12 +8,32 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-v10-with-tailwandcss';
 
-  compUI: string = 'centered-with-bottom-border';
+  headerOrNav: string = 'centered-with-bottom-border';
+  container: string;
+  elements: string;
 
   constructor() { }
 
-  changeComponents(event) {
+  changeComponents(event: { title: any; item: string; }) {
 
-    this.compUI = event;
+    switch (event.title) {
+      case 'headers':
+        this.headerOrNav = event.item;
+        break;
+
+      case 'app-shells':
+        this.container = null;
+        this.headerOrNav = event.item;
+
+      case 'page-sections':
+        this.container = event.item;
+
+      case 'elements':
+        this.elements = event.item;
+
+      default:
+        break;
+    }
+
   }
 }

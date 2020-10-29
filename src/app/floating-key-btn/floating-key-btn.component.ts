@@ -26,16 +26,25 @@ export class FloatingKeyBtnComponent implements OnInit {
         title: 'app-shells',
         activated: 'dark-nav-feat-white-header',
         items: ['dark-nav-feat-white-header']
-      }
+      },
+      {
+        title: 'page-sections',
+        activated: 'hero-section',
+        items: ['corat-coret', 'hero-section', 'feature-sections', 'cta-sections']
+      },
+      {
+        title: 'elements',
+        activated: 'header-banner',
+        items: ['header-banner']
+      },
     ];
 
   }
 
-  selectSubMenu(event) {
-    // console.log("FloatingKeyBtnComponent -> selectSubMenu -> event", event)
-
+  selectSubMenu(event: { item: string; }) {
     // ganti warna border yang aktif ketika diklik
-    this.listMenuItems.filter(x => x.items.indexOf(event) !== -1)[0].activated = event;
+    this.listMenuItems.filter(x =>
+      x.items.indexOf(event.item) !== -1)[0].activated = event.item;
     // send to app.component
     this.clickedMenu.emit(event);
   }
