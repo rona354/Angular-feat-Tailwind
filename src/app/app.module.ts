@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { DarkNavFeatWhiteHeaderComponent } from './app-shells/dark-nav-feat-whit
 import { FeatureSectionsComponent } from './page-sections/feature-sections/feature-sections.component';
 import { CtaSectionsComponent } from './page-sections/cta-sections/cta-sections.component';
 import { HeaderBannerComponent } from './elements/header-banner/header-banner.component';
+import { SigninAndRegisterComponent } from './forms/signin-and-register/signin-and-register.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,17 @@ import { HeaderBannerComponent } from './elements/header-banner/header-banner.co
     DarkNavFeatWhiteHeaderComponent,
     FeatureSectionsComponent,
     CtaSectionsComponent,
-    HeaderBannerComponent
+    HeaderBannerComponent,
+    SigninAndRegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [CoratCoretComponent, BlueButtonComponent, FloatingKeyBtnComponent, CenteredWithBottomBorderComponent, SelectMenuComponent, TealBackNavComponent, DarkNavFeatWhiteHeaderComponent, FeatureSectionsComponent, CtaSectionsComponent, HeaderBannerComponent]
+  exports: [CoratCoretComponent, BlueButtonComponent, FloatingKeyBtnComponent, CenteredWithBottomBorderComponent, SelectMenuComponent, TealBackNavComponent, DarkNavFeatWhiteHeaderComponent, FeatureSectionsComponent, CtaSectionsComponent, HeaderBannerComponent, SigninAndRegisterComponent]
 })
 export class AppModule { }

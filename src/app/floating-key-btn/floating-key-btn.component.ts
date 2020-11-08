@@ -30,7 +30,7 @@ export class FloatingKeyBtnComponent implements OnInit {
       {
         title: 'page-sections',
         activated: 'hero-section',
-        items: ['corat-coret', 'hero-section', 'feature-sections', 'cta-sections']
+        items: ['corat-coret', 'hero-section', 'feature-sections', 'cta-sections', 'sign-in-and-register']
       },
       {
         title: 'elements',

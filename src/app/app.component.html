@@ -1,4 +1,4 @@
-<div class="min-h-screen">
+<div class="min-h-screen bg-gray-100">
 
   <div [ngSwitch]="headerOrNav">
     <app-centered-with-bottom-border *ngSwitchCase="'centered-with-bottom-border'"></app-centered-with-bottom-border>
@@ -15,6 +15,7 @@
     <app-hero-section *ngSwitchCase="'hero-section'"></app-hero-section>
     <app-feature-sections *ngSwitchCase="'feature-sections'"></app-feature-sections>
     <app-cta-sections *ngSwitchCase="'cta-sections'"></app-cta-sections>
+    <app-signin-and-register *ngSwitchCase="'sign-in-and-register'"></app-signin-and-register>
     <app-corat-coret *ngSwitchCase="'corat-coret'"></app-corat-coret>
   </div>
 
