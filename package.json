@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "NODE_ENV=production ng build --prod"
+    "build:prod": "NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider ng build --prod",
+    "vercel-build": "NODE_OPTIONS=--openssl-legacy-provider ng build --prod"
   },
   "private": true,
   "dependencies": {
