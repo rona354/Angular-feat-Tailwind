@@ -149,6 +149,82 @@ The project follows a modular component architecture:
 3. **Start development server**: `npm start`
 4. **Open browser**: Navigate to `http://localhost:4200/`
 
+## 🌐 Deployment & Compatibility Fixes
+
+### Vercel Deployment Configuration
+
+This project has been optimized for deployment on Vercel with specific fixes for Angular 10 + Node.js 18+ compatibility:
+
+#### OpenSSL Legacy Provider Fix
+Angular 10 uses Webpack 4, which has compatibility issues with Node.js 17+ due to stricter OpenSSL requirements. We resolved this with:
+
+**1. Build Script Configuration (`package.json`)**
+```json
+{
+  "scripts": {
+    "vercel-build": "NODE_OPTIONS=--openssl-legacy-provider ng build --prod"
+  }
+}
+```
+
+**2. Vercel Build Environment (`vercel.json`)**
+```json
+{
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--openssl-legacy-provider"
+    }
+  }
+}
+```
+
+#### PostCSS Configuration
+Separated PostCSS configuration into dedicated `postcss.config.js` file to avoid module conflicts:
+
+```javascript
+module.exports = {
+  plugins: [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ],
+};
+```
+
+#### Static Asset Routing
+Configured proper static asset serving in `vercel.json` to prevent HTML being served instead of JS/CSS files:
+
+```json
+{
+  "routes": [
+    {
+      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))$",
+      "dest": "/$1"
+    },
+    {
+      "src": "/site.webmanifest",
+      "dest": "/site.webmanifest",
+      "headers": {
+        "Content-Type": "application/manifest+json"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+```
+
+### Key Compatibility Solutions
+
+1. **Node.js 18+ Support**: Added OpenSSL legacy provider flags for Webpack 4 compatibility
+2. **PostCSS Module Resolution**: Separated PostCSS config to prevent build-time conflicts
+3. **Static Build Configuration**: Optimized for SPA routing and proper asset serving
+4. **Environment Variable Management**: Dual-layer environment configuration for build reliability
+
+These fixes ensure successful deployment on modern Node.js versions while maintaining Angular 10's build requirements.
+
 ## 📄 Additional Information
 
 For more help on Angular CLI, use `ng help` or check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
