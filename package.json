@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --prod",
-    "vercel-build": "ng build --prod"
+    "vercel-build": "NODE_OPTIONS=--openssl-legacy-provider ng build --prod"
   },
   "private": true,
   "dependencies": {
