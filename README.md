@@ -2,6 +2,8 @@
 
 A modern Angular application built with Tailwind CSS for rapid UI development and beautiful, responsive design.
 
+**Live Demo:** [angular-feat-tailwind.vercel.app](https://angular-feat-tailwind.vercel.app)
+
 ## 🚀 Tech Stack
 
 - **Angular**: v10.1.6
